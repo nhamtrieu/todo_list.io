@@ -245,4 +245,7 @@ input.edit-field {
     #todo-form button {
         width: 350px;
     }
+    input.edit-field {
+        width: auto;
+    }
 }
