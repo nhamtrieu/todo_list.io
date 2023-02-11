@@ -140,14 +140,12 @@ function editTask() {
                 liElement.appendChild(inputElement);
                 let pElement = liElement.querySelector("p");
                 liElement.removeChild(pElement);
-                // pElement.style.display = "none";
                 inputElement.value = pElement.textContent;
                 document.onkeyup = (e) => {
                     let input = inputElement.value;
                     if (e.keyCode === 13) {
                         checkboxElement.style.display = "grid";
                         pElement.innerText = input;
-                        pElement.style.display = "block";
                         editElement.name = input;
                         tasks[index].name = input;
                         localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -166,4 +164,5 @@ function deletasks(index) {
     localStorage.setItem("tasks", JSON.stringify(tasks));
     renderStats();
     render();
+    editTask();
 }
