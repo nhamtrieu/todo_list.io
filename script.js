@@ -140,7 +140,8 @@ function editTask() {
 
                 liElement.appendChild(inputElement);
                 let pElement = liElement.querySelector("p");
-                pElement.style.display = "none";
+                liElement.removeChild(pElement);
+                // pElement.style.display = "none";
                 inputElement.value = pElement.textContent;
                 document.onkeyup = (e) => {
                     let input = inputElement.value;
@@ -153,6 +154,8 @@ function editTask() {
                         tasks[index].name = input;
                         localStorage.setItem("tasks", JSON.stringify(tasks));
                         isEditing = true;
+                        liElement.appendChild(pElement);
+                        liElement.removeChild(inputElement);
                     }
                 };
             }
