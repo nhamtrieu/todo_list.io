@@ -54,11 +54,8 @@ todoForm.addEventListener("submit", (e) => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
     render();
     renderStats();
-    // deleteTask();
     completeTask();
     editTask();
-    todoForm.reset();
-    mainInput.focus();
 });
 
 function createTask(task, index) {
