@@ -52,7 +52,7 @@ todoForm.addEventListener("submit", (e) => {
     };
     tasks.push(task);
     localStorage.setItem("tasks", JSON.stringify(tasks));
-    createTask(task);
+    render();
     renderStats();
     // deleteTask();
     todoForm.reset();
