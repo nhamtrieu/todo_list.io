@@ -55,6 +55,7 @@ todoForm.addEventListener("submit", (e) => {
     render();
     renderStats();
     // deleteTask();
+    completeTask();
     todoForm.reset();
     mainInput.focus();
 });
@@ -131,7 +132,7 @@ function editTask() {
                 isEditing = false;
                 let checkboxElement = document.querySelector(`.check${index}`);
                 checkboxElement.style.display = "none";
-                console.log(checkboxElement);
+                // console.log(checkboxElement);
                 let liElement = document.querySelector(
                     `.id${tasks[index].id} div`
                 );
@@ -146,7 +147,6 @@ function editTask() {
                 document.onkeyup = (e) => {
                     let input = inputElement.value;
                     if (e.keyCode === 13) {
-                        inputElement.style.display = "none";
                         checkboxElement.style.display = "grid";
                         pElement.innerText = input;
                         pElement.style.display = "block";
