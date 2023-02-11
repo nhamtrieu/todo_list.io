@@ -56,6 +56,7 @@ todoForm.addEventListener("submit", (e) => {
     renderStats();
     // deleteTask();
     completeTask();
+    editTask();
     todoForm.reset();
     mainInput.focus();
 });
