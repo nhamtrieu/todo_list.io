@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+    <body>
+        <header id="main-header">
+            <div class="container">
+                <h1>Today</h1>
+                <form action="" id="todo-form">
+                    <input
+                        type="text"
+                        name="task-name"
+                        placeholder="Input here"
+                        autofocus
+                    />
+                    <button type="submit">Add task</button>
+                </form>
+            </div>
+        </header>
+        <section>
+            <div class="container" id="main-content">
+                <ul class="stats">
+                    <li>
+                        <span>Remaining</span>
+                        <span id="remaining-task">0</span>
+                    </li>
+                    <li>
+                        <span>Completed</span>
+                        <span id="completed-task">0</span>
+                    </li>
+                    <li>
+                        <span>Total</span>
+                        <span id="total-task">0</span>
+                    </li>
+                </ul>
+                <ul class="todos">
+                    <!-- <li class="completed">
+                        <div>
+                            <input type="checkbox" name="tasks" id="1" />
+                            <span contenteditable>Task 1</span>
+                        </div>
+
+                        <div class="actions">
+                            <button title="Edit task" class="edit-task">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button title="Remove task" class="remove-task">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="checkbox" name="tasks" id="1" />
+                            <span>Task 2</span>
+                        </div>
+                        <div class="actions">
+                            <button title="Edit task" class="edit-task">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button title="Remove task" class="remove-task">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <input type="checkbox" name="tasks" id="1" />
+                            <span>Task 3</span>
+                        </div>
+                        <div class="actions">
+                            <button title="Edit task" class="edit-task">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button title="Remove task" class="remove-task">
+                                <i class="fas fa-trash-alt"></i>
+                            </button>
+                        </div>
+                    </li> -->
+                </ul>
+            </div>
+        </section>
+        <footer>
+            <p class="contact">
+                Please contact me
+                <a href="https://github.com/nhamtrieu">Trieu Tuyen Nham</a> or
+                <a
+                    href="https://www.facebook.com/profile.php?id=100041079307279"
+                    >Trieu Tuyen Nham</a
+                >
+            </p>
+        </footer>
+        <script src="./script.js"></script>
+    </body>
+</html>
