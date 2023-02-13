@@ -56,6 +56,7 @@ todoForm.addEventListener("submit", (e) => {
     renderStats();
     completeTask();
     editTask();
+    todoForm.reset();
 });
 
 function createTask(task, index) {
