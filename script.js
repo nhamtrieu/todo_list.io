@@ -44,19 +44,22 @@ todoForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const inputValue = mainInput.value;
     if (inputValue.trim() === "") alert("Please input task!");
-    if (!inputValue) return;
-    const task = {
-        id: new Date().getTime(),
-        name: inputValue,
-        isCompleted: false,
-    };
-    tasks.push(task);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-    render();
-    renderStats();
-    completeTask();
-    editTask();
-    todoForm.reset();
+    else {
+        if (!inputValue) return;
+        const task = {
+            id: new Date().getTime(),
+            name: inputValue,
+            isCompleted: false,
+        };
+        tasks.push(task);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        render();
+        renderStats();
+        completeTask();
+        editTask();
+        todoForm.reset();
+        todoForm.focus();
+    }
 });
 
 function createTask(task, index) {
