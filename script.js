@@ -130,6 +130,7 @@ function editTask() {
     let editElements = document.querySelectorAll(".edit-task");
     editElements.forEach((editElement, index) => {
         editElement.addEventListener("click", () => {
+            // console.log(editElement);
             if (isEditing === true) {
                 isEditing = false;
                 let checkboxElement = document.querySelector(`.check${index}`);
@@ -143,19 +144,28 @@ function editTask() {
 
                 liElement.appendChild(inputElement);
                 let pElement = liElement.querySelector("p");
+                let widthP = pElement.offsetWidth;
+                inputElement.style.minWidth = widthP + "px";
                 liElement.removeChild(pElement);
                 inputElement.value = pElement.textContent;
                 document.onkeyup = (e) => {
                     let input = inputElement.value;
                     if (e.keyCode === 13) {
-                        checkboxElement.style.display = "grid";
-                        pElement.innerText = input;
-                        editElement.name = input;
-                        tasks[index].name = input;
-                        localStorage.setItem("tasks", JSON.stringify(tasks));
-                        isEditing = true;
-                        liElement.appendChild(pElement);
-                        liElement.removeChild(inputElement);
+                        if (input.trim() === "") {
+                            alert("Please enter a valid");
+                        } else {
+                            checkboxElement.style.display = "grid";
+                            pElement.innerText = input.trim();
+                            editElement.name = input;
+                            tasks[index].name = input;
+                            localStorage.setItem(
+                                "tasks",
+                                JSON.stringify(tasks)
+                            );
+                            isEditing = true;
+                            liElement.appendChild(pElement);
+                            liElement.removeChild(inputElement);
+                        }
                     }
                 };
             }

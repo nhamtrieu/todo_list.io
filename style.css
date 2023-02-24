@@ -165,7 +165,7 @@ a:hover {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    width: 1200px;
+    /* width: 1200px; */
 }
 
 .todos li.completed {
@@ -212,6 +212,7 @@ input.edit-field {
     outline: none;
     width: auto;
     font-size: 16px;
+    /* border: none; */
 }
 
 .todos li .actions {
@@ -239,7 +240,7 @@ input.edit-field {
 }
 
 /* responsive */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 576px) {
     #todo-form {
         display: flex;
         justify-content: center;
@@ -252,8 +253,19 @@ input.edit-field {
     #todo-form button {
         width: 350px;
     }
+
+    .container .stats {
+        flex-direction: column;
+    }
     input.edit-field {
         width: auto;
+    }
+
+    .todos li div {
+        flex: 2;
+    }
+    .todos li .actions {
+        flex: 1;
     }
     .todos li div p {
         text-overflow: ellipsis;
