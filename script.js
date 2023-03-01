@@ -193,7 +193,7 @@ function showFulltask() {
                 if (document.body.offsetWidth <= 576) {
                     textElement.style.width = "220px";
                 } else if (document.body.offsetWidth <= 768) {
-                    textElement.style.width = "calc(100% - 20px)";
+                    textElement.style.width = "calc(100% - 60px)";
                 } else {
                     textElement.style.width = "100%";
                 }
@@ -206,7 +206,7 @@ function showFulltask() {
                 if (document.body.offsetWidth <= 576) {
                     textElement.style.width = "220px";
                 } else if (document.body.offsetWidth <= 768) {
-                    textElement.style.width = "calc(100% - 20px)";
+                    textElement.style.width = "calc(100% - 60px)";
                 } else {
                     textElement.style.width = "100%";
                 }

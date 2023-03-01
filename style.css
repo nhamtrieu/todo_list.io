@@ -258,13 +258,13 @@ input.edit-field {
 
 @media screen and (max-width: 768px) {
     .todos li div:nth-child(1) {
-        width: calc(100% - 50px);
+        width: calc(100% - 60px);
     }
     .todos li div p {
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        width: calc(100% - 20px);
+        width: calc(100% - 50px);
         cursor: pointer;
     }
 }
