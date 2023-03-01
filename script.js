@@ -31,6 +31,7 @@ function render() {
         `;
     });
     todoList.innerHTML = html.join("");
+    showFulltask();
 }
 
 window.addEventListener("load", () => {
@@ -38,6 +39,7 @@ window.addEventListener("load", () => {
     render();
     completeTask();
     editTask();
+    // showFulltask();
     // deleteTask();
 });
 todoForm.addEventListener("submit", (e) => {
@@ -144,8 +146,6 @@ function editTask() {
 
                 liElement.appendChild(inputElement);
                 let pElement = liElement.querySelector("p");
-                let widthP = pElement.offsetWidth;
-                inputElement.style.minWidth = widthP + "px";
                 liElement.removeChild(pElement);
                 inputElement.value = pElement.textContent;
                 document.onkeyup = (e) => {
@@ -179,4 +179,39 @@ function deletasks(index) {
     renderStats();
     render();
     editTask();
+}
+
+function showFulltask() {
+    let textElements = document.querySelectorAll(".todos li div p");
+    let isClicked = Array.from(textElements, () => false);
+    textElements.forEach((textElement, key) => {
+        textElement.addEventListener("click", () => {
+            if (isClicked[key] === false) {
+                textElement.style.whiteSpace = "pre-wrap";
+                textElement.style.wordBreak = "break-word";
+                textElement.style.overflow = "visible";
+                if (document.body.offsetWidth <= 576) {
+                    textElement.style.width = "220px";
+                } else if (document.body.offsetWidth <= 768) {
+                    textElement.style.width = "calc(100% - 20px)";
+                } else {
+                    textElement.style.width = "100%";
+                }
+                isClicked[key] = true;
+            } else {
+                textElement.style.textOverflow = "ellipsis";
+                textElement.style.whiteSpace = "nowrap";
+                textElement.style.overflow = "hidden";
+                textElement.style.cursor = "pointer";
+                if (document.body.offsetWidth <= 576) {
+                    textElement.style.width = "220px";
+                } else if (document.body.offsetWidth <= 768) {
+                    textElement.style.width = "calc(100% - 20px)";
+                } else {
+                    textElement.style.width = "100%";
+                }
+                isClicked[key] = false;
+            }
+        });
+    });
 }

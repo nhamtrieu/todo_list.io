@@ -155,10 +155,11 @@ a:hover {
     align-items: center;
 }
 
-.todos li div {
+.todos li div:nth-child(1) {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    width: calc(100% - 150px);
 }
 
 .todos li div p {
@@ -213,6 +214,7 @@ input.edit-field {
     width: auto;
     font-size: 16px;
     /* border: none; */
+    width: 1200px;
 }
 
 .todos li .actions {
@@ -238,45 +240,73 @@ input.edit-field {
 .todos li button i:active {
     transform: scale(0.8);
 }
+.todos li div p {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: calc(100% - 150px);
+    cursor: pointer;
+}
+/* .todos li div p:hover {
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow: visible;
+    width: 1200px;
+} */
 
 /* responsive */
+
+@media screen and (max-width: 768px) {
+    .todos li div:nth-child(1) {
+        width: calc(100% - 50px);
+    }
+    .todos li div p {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: calc(100% - 20px);
+        cursor: pointer;
+    }
+}
+
 @media screen and (max-width: 576px) {
     #todo-form {
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
     }
     #todo-form input {
-        width: 350px;
+        width: 100%;
     }
     #todo-form button {
-        width: 350px;
+        width: 100%;
     }
 
     .container .stats {
         flex-direction: column;
     }
     input.edit-field {
-        width: auto;
+        width: 100%;
     }
 
-    .todos li div {
-        flex: 2;
+    .todos li div:nth-child(1) {
+        width: calc(100% - 30px);
     }
     .todos li .actions {
-        flex: 1;
+        flex-direction: column;
     }
     .todos li div p {
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
-        width: 220px;
+        width: 100%;
     }
-    .todos li div p:hover {
+    /* .todos li div p:hover {
         white-space: pre-wrap;
         word-break: break-word;
         overflow: visible;
         width: 220px;
-    }
+    } */
 }
