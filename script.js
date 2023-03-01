@@ -195,20 +195,21 @@ function showFulltask() {
                 } else if (document.body.offsetWidth <= 768) {
                     textElement.style.width = "calc(100% - 60px)";
                 } else {
-                    textElement.style.width = "100%";
+                    textElement.style.width = "calc(100% - 100px)";
                 }
                 isClicked[key] = true;
             } else {
                 textElement.style.textOverflow = "ellipsis";
                 textElement.style.whiteSpace = "nowrap";
                 textElement.style.overflow = "hidden";
+                textElement.style.wordBreak = "break-word";
                 textElement.style.cursor = "pointer";
                 if (document.body.offsetWidth <= 576) {
                     textElement.style.width = "220px";
                 } else if (document.body.offsetWidth <= 768) {
                     textElement.style.width = "calc(100% - 60px)";
                 } else {
-                    textElement.style.width = "100%";
+                    textElement.style.width = "calc(100% - 100px)";
                 }
                 isClicked[key] = false;
             }
